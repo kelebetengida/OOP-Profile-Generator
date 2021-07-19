@@ -2,7 +2,8 @@ const inquirer =require("inquirer");
 const fs=require("fs");
 const Intern=require("./library/Intern")
 const Manager=require("./library/Manager")
-const Engineer=require("./library/Engineer")
+const Engineer=require("./library/Engineer");
+const Employee = require("./library/Employee");
 const teamArray=[];
 
 
@@ -73,18 +74,36 @@ const internQuestion=[
     name: 'school',
     message: 'What is interns school name?',
   },
+  
 ] 
 
 const whatsNextQuestion=[
   {
-    type: 'input',
-    name: 'list',
+    type: 'list',
+    name: 'OPTION',
     message: 'Which type of team member would you like to edit?',
-    choices: ['internQuestions', 'engineerQuestion', 'managerQuestion']
+    choices: ['internQuestion', 'engineerQuestion', 'managerQuestion','addemployee']
   },
 ] 
 
+const askNext=()=>{
+  inquirer.prompt(whatsNextQuestion)
+  .then((answers)=>{
+    
 
+    if (answers.OPTION==='internQuestion'){
+      return inquirer.prompt(internQuestion)
+    } else if (answers.OPTION==='engineerQuestion'){
+      return inquirer.prompt(engineerQuestion)
+    }else if (answers.OPTION==='managerQuestion'){
+      return inquirer.prompt(managerQuestion)
+    }else if (answers.OPTION==='addemployee'){
+      return inquirer.prompt(whatsNextQuestion)
+    }
+      
+     
+  })
+}
 const askManager=()=>{
   inquirer.prompt(managerQuestion)
   .then((answers)=>{
@@ -93,47 +112,27 @@ const askManager=()=>{
       teamArray.push(manager)
   })
 }
-askManager()
+const askEngineer=()=>{
+  inquirer.prompt(engineerQuestion)
+  .then((answers)=>{
+      const engineer=new Engineer(answers.name, answers.id, answers.email, answers.Github)
+      console.log(answers)
+      teamArray.push(engineer)
+  })
+}
+const askIntern=()=>{
+  inquirer.prompt(internQuestion)
+  .then((answers)=>{
+      const intern=new Intern(answers.name, answers.id, answers.email, answers.school)
+      console.log(answers)
+      teamArray.push(intern)
+  })
+}
+askNext()
 
 
-const 
 /*
-const askWhatsNext=()=>inquirer
-  .prompt(whatsNextQuestions)
-  .then((whatsNextAnswers)=>{
 
-    //Then decide what to do next with theor answer
-  })
-
-//inquirer.prompt() the user for manager information using iur managerquestion
-inquirer 
-  .prompt(managerQuestion)
-  .then((managerAnswers) =>{
-
-    //Then we need to create a new manager object with that data
-    //And then new to ask the users what they want to do next(inquirer.prompt() with whatsNext Question )
-      return inquirer
-        .prompt(whatsNextQuestions)
-        .then((whatsNextAnswer)=>{
-
-        })
-    //Then to use their answer to decide what to do next
-
-  })
-
-  .then(()=>{
-
-//User employee obkects to create HTML page and write it to file
-
-  })
-  .catch((error)=>{
-    if(error.isTyError){
-      //prompt couldn't be rendered in the current enviroment 
-    } else {
-
-
-    }
-  })
 
 function writeToFile(fileName, data) {
   const readMeContent=generateMarkdown(data);
