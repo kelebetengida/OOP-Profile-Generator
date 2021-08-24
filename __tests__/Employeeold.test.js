@@ -1,9 +1,13 @@
 const Employee = require("../lib/Employee");
-const test= {
-    name: "james",
-    id: "2",
-    email: "engi@uw.edu"
-};
+
+​
+
+test("Can instantiate Employee instance", () => {
+    const e = new Employee();
+    expect(typeof(e)).toBe("object");
+  });
+
+/*
 describe("Employee", ()=>{
     describe("Return Employees Name", ()=>{
         it ("This will run the employyees name", ()=>{
@@ -16,7 +20,7 @@ describe("Employee", ()=>{
     describe("Return Employees id", ()=>{
         it ("This will run the employyees id", ()=>{
             const answer =test.id;
-            const result =new Employee(test).getId();
+            const result =new Employee(testa).getId();
             expect(result).toEqual(answer);
         });
     });
@@ -37,3 +41,4 @@ describe("Employee", ()=>{
         });
     });
 });
+*/
