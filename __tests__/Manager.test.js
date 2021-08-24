@@ -1,26 +1,25 @@
-const Manager = require("../library/Manager");
-​
-const test={
-  name: "jamie ",
-  id: "4",
-  email: "Jemie@uw.edu",
-  officeNumber: "2"
+const Manager = require("../lib/Manager");
+const test= {
+    name: "james",
+    id: "2",
+    email: "engi@uw.edu",
+    officeNumber: "4"
 };
-​
 describe("Manager", ()=>{
-  describe("Return Manager School", ()=>{
-      it ("This method should run Manager school", ()=>{
-          const answer =test.officeNumber;
-          const result =new Manager(test).getOfficeNumber();
-          expect(result).toEqual(answer);
-      });
-  });
+    describe("Return Manager Name", ()=>{
+        it ("This will run the Manager office number", ()=>{
+            const answer =test.officeNumber;
+            const result =new Manager(test.name, test.id, test.email, test.officeNumber).getOfficeNumber();
+            expect(result).toEqual(answer);
+        });
+    });
 
-  describe("Return Manager role", ()=>{
-      it ("This method should run Manager role", ()=>{
-          const answer ="Manager";
-          const result =new Manager(test).getRole();
-          expect(result).toEqual(answer);
-      });
-  });
+
+    describe("Return Manager Role", ()=>{
+        it ("This will run the Manager role", ()=>{
+            const answer = "Manager";
+            const result =new Manager().getRole();
+            expect(result).toEqual(answer);
+        });
+    });
 });
