@@ -1,10 +1,13 @@
-const Employee = require("../library/Employee");
-const test={
-    name: "Kelebet",
-    id: "1",
-    email: "Engidk@uw.edu"
-};
+const Employee = require("../lib/Employee");
+
 ​
+
+test("Can instantiate Employee instance", () => {
+    const e = new Employee();
+    expect(typeof(e)).toBe("object");
+  });
+
+/*
 describe("Employee", ()=>{
     describe("Return Employees Name", ()=>{
         it ("This will run the employyees name", ()=>{
@@ -38,3 +41,4 @@ describe("Employee", ()=>{
         });
     });
 });
+*/

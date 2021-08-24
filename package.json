@@ -1,0 +1,18 @@
+{
+  "name": "13-Ins-Pass-Tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fizz.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose test/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
