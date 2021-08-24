@@ -1,10 +1,16 @@
-# OOP-Profile-Generator
+# Profile-Generator
 
 ## Discription
-A Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
+A Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each team member as a card.
 
 ## Table of contents 
 
+* [Discription]()
+* [User Story]()
+* [Acceptance Criteria]()
+* [Technologies Used]()
+* [Mock Up]()
+* [Questions]()
 
 
 
@@ -43,5 +49,17 @@ HTML
 Java Script
 NPM module
 Jest
+Inquiere
+
+# Mock Up
+
+ ![](./Assets/Picture10.png) 
+
+
+ ![](./Assets/Picture11.png) 
 
 ## Questions
+
+GitHub: [github.com/kelebetengida]()
+
+Email: [engidk@uw.edu]()
