@@ -1,9 +1,9 @@
 const inquirer =require("inquirer");
 const fs=require("fs");
-const Intern=require("./library/Intern")
-const Manager=require("./library/Manager")
-const Engineer=require("./library/Engineer");
-const Employee = require("./library/Employee");
+const Intern=require("./lib/Intern")
+const Manager=require("./lib/Manager")
+const Engineer=require("./lib/Engineer");
+const Employee = require("./lib/Employee");
 const { generate } = require("rxjs");
 const teamArray=[];
 
